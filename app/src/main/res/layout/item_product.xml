@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.TextUtils"/>
+        <import type="java.lang.String"/>
+        <variable name="obj" type="com.ecommerceapp.data.model.ProductModel.Product"/>
+
+    </data>
+    <com.google.android.material.card.MaterialCardView
+            android:layout_margin="@dimen/size_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/size_5">
+
+            <ImageView
+                    android:id="@+id/img_product"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_product_name"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_product_qty"
+                    app:product_pic_error="@{@drawable/ic_photo_library_black_24dp}"
+                    app:product_pic="@{obj.image}"
+                    android:src="@drawable/ic_photo_library_black_24dp"/>
+            <TextView
+                    android:id="@+id/tv_product_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="@dimen/size_10"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="@{!TextUtils.isEmpty(obj.name)?obj.name:``}"
+                    tools:text="Stole Whole bjbbbjbhjbjbbbbbbbb bjbbb bjbbbbb bbbbbbbbb bbbbbbbbbbb bbbbbb bbbbbbbbbb hhhh ythuth"
+                    android:paddingVertical="@dimen/size_5"
+                    android:textSize="@dimen/txt_size_16"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:layout_marginStart="@dimen/size_10"
+                    app:layout_constraintStart_toEndOf="@id/img_product"
+                    app:layout_constraintLeft_toRightOf="@+id/img_product"
+                    android:layout_marginRight="@dimen/size_10"
+                    android:layout_marginLeft="@dimen/size_10"/>
+
+            <TextView
+                    android:id="@+id/tv_product_cat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/size_5"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_product_name"
+                    tools:text="165165kklmlkmklklnkn nkn nkn nkn nkn nk njk njk knk knkj jjnnk nk nnkj nk 1561115615151"
+                    android:textSize="@dimen/txt_size_16"
+                    android:text="@{!TextUtils.isEmpty(obj.categoryName)?obj.categoryName:``}"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_product_name"
+                    android:textColor="@color/gray1"/>
+
+            <TextView
+                    android:id="@+id/tv_product_qty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="@dimen/size_5"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_product_cat"
+                    tools:text="QTY:1"
+                    app:layout_constraintRight_toLeftOf="@+id/tv_product_price"
+                    android:textSize="@dimen/txt_size_16"
+                    android:text="@{!TextUtils.isEmpty(obj.qty)?@string/qty(obj.qty):@string/qty(``)}"
+                    app:layout_constraintStart_toStartOf="@+id/tv_product_name"
+                    android:textColor="@color/colorBlack"/>
+            <TextView
+                    android:id="@+id/tv_product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_product_cat"
+                    tools:text="$750.00"
+                    android:paddingVertical="@dimen/size_5"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="@{!TextUtils.isEmpty(obj.price)?@string/rs(obj.price):@string/rs(``)}"
+                    android:textSize="@dimen/txt_size_16"
+                    android:layout_marginStart="@dimen/size_10"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_product_qty"
+                    android:textColor="@color/colorBlack" android:layout_marginLeft="@dimen/size_10"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

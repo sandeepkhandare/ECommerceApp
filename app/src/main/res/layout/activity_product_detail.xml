@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <import type="android.text.TextUtils"/>
+        <import type="java.lang.String"/>
+        <variable name="obj" type="com.ecommerceapp.data.model.ProductModel.Product"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.productdetail.ProductDetailActivity">
+
+        <ImageView
+                android:id="@+id/img_product_detail"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="@dimen/size_25"
+                app:layout_constraintBottom_toTopOf="@+id/tv_product_name"
+                android:src="@drawable/ic_photo_library_black_24dp"
+                app:product_pic_error="@{@drawable/ic_photo_library_black_24dp}"
+                app:product_pic="@{obj.image}"
+                android:layout_width="0dp"
+                android:layout_height="0dp"/>
+        <TextView
+                android:id="@+id/tv_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:padding="@dimen/size_5"
+                app:layout_constraintBottom_toTopOf="@+id/tv_product_cat"
+                tools:text="165165kklmlkmklklnkn nkn nkn nkn nkn nk njk njk knk knkj jjnnk nk nnkj nk 1561115615151"
+                android:textSize="@dimen/txt_size_20"
+                android:layout_marginTop="@dimen/size_10"
+                android:text="@{!TextUtils.isEmpty(obj.name)?obj.name:``}"
+                android:textColor="@color/colorBlack"/>
+
+        <TextView
+                android:id="@+id/tv_product_cat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tv_product_price"
+                tools:text="165165kklmlkmklklnkn nkn nkn nkn nkn nk njk njk knk knkj jjnnk nk nnkj nk 1561115615151"
+                android:textSize="@dimen/txt_size_20"
+                android:layout_marginTop="@dimen/size_10"
+                android:padding="@dimen/size_5"
+                android:text="@{!TextUtils.isEmpty(obj.categoryName)?obj.categoryName:``}"
+                android:textColor="@color/gray1"/>
+
+
+        <TextView
+                android:id="@+id/tv_product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/view_horizontal_line_1"
+                tools:text="165165kklmlkmklklnkn nkn nkn nkn nkn nk njk njk knk knkj jjnnk nk nnkj nk 1561115615151"
+                android:textSize="@dimen/txt_size_20"
+                android:layout_marginTop="@dimen/size_10"
+                android:padding="@dimen/size_5"
+                android:layout_marginBottom="@dimen/size_15"
+                android:text="@{!TextUtils.isEmpty(obj.price)?@string/rs(obj.price):@string/rs(``)}"
+                android:textColor="@color/colorBlack"/>
+
+        <View
+                android:id="@+id/view_horizontal_line_1"
+                android:layout_width="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/img_size"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_height="1dp"
+                android:padding="@dimen/size_5"
+                android:layout_marginBottom="@dimen/size_15"
+                android:background="@color/colorPrimaryDark"/>
+
+        <ImageView
+                android:id="@+id/img_size"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:src="@drawable/ic_import_export_black_24dp"
+                android:layout_width="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/size_15"
+                android:layout_marginLeft="@dimen/size_15"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_15"/>
+
+
+        <TextView
+                android:id="@+id/tv_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/img_size"
+                app:layout_constraintBottom_toBottomOf="@+id/img_size"
+                app:layout_constraintTop_toTopOf="@+id/img_size"
+                tools:text="165165kklmlkmklklnkn nkn nkn nkn nkn nk njk njk knk knkj jjnnk nk nnkj nk 1561115615151"
+                android:textSize="@dimen/txt_size_20"
+                android:layout_marginLeft="@dimen/size_15"
+                android:text="@{!TextUtils.isEmpty(obj.size)?obj.size:``}"
+                android:textColor="@color/colorBlack"
+                android:layout_marginStart="@dimen/size_15"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme"  parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="ZoomInOutDialog" parent="@android:style/android:Theme.DeviceDefault.Light.Dialog">
+        <item name="android:windowAnimationStyle">@style/ZoomDialog</item>
+    </style>
+
+
+    <style name="ZoomDialog">
+        <item name="android:windowEnterAnimation">@anim/zoom_in_dialog</item>
+        <item name="android:windowExitAnimation">@anim/zoom_out_dialog</item>
+    </style>
+
+</resources>
